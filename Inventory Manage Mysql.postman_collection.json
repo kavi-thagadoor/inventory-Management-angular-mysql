@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "b4a9c3ab-11ff-4f87-8336-7a3cc8bd4f04",
+		"name": "Inventory Manage Mysql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29698431"
+	},
+	"item": [
+		{
+			"name": "add-products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInVzZXIiOjIsImlhdCI6MTc1MDAxNTUzM30.V83vqV5TzAZnzGxgcue7RT32a7ThDAnFUhdBawIBWLFkVAavbzdYDB1WtBKJrOPJN-pv-1rlEHPv_aXR312_HWppfa7B3ws-1ehUVeWVJFFHhfEEHJPU1y6xuq96Cf-hkjwUdCfWJQmgp_ohh-2L8WOeFEEBK7125Ao45fGNF_VzISMn25-N8piaB7bF0g14vnDdHkrbbjpSOzUWnIR4O-Q0UbgKuL4O6srJuZmMyOe9L8v8nOlSG0q6g59Un32181PrRG7v9ph2cAm_F_Xcu421SqT7USbxsYtTjmoQX-7Uo8e15cqABe-yLTHgnmQTKomB39sfE6auQa_tgixVIw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"name\": \"Wireless Mouse\",\r\n//   \"product_code\": \"WM12345\",\r\n//   \"quantity\": 50,\r\n//   \"price\": 799.99,\r\n//   \"description\": \"A high-precision wireless mouse with ergonomic design.\",\r\n//   \"created_by\": \"4242\",\r\n//   \"updated_by\": \"2323\"\r\n// }\r\n{\r\n  \"name\": \"Red Shirt\",\r\n  \"product_code\": \"RS190\",\r\n  \"quantity\": 50,\r\n  \"price\": 299.99,\r\n  \"description\": \"High-quality red cotton shirt\",\r\n  \"created_by\": 1,\r\n  \"updated_by\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/add-products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"add-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NTAwMDgwNzl9.xa-gGuleo1Fo21p6I9u3bWPNwpXbNjTaM1zgmrbi7zNjWWi-hrOOGqsnPvi4eLd7ELmpFYgmKEU_exuuF7qxhzZzts5qhYWPOavpZ5jhwNSW66jKbUjgRGWOx68W3nYUPY5gngjyGFjygpuWfBxIf1ix1aReyHmM5CNtZd1pyy8AH8N-9VEipSHP3_BR7a4qcUYusllJB85da1ALu8z3dUK8Wv3B011T76cgPkhO7BUlcwKug7yQ-PE-f6bx7hRDRwTMYqtLC5JWa5jsc1rLLfMrzv-EGZRZFjOqfTCAgEIC8uvHZBXayB51-9aWmBnieS9Ip2cbUpbFeefddPmjNQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"db\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/get-products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"get-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 17,\r\n  \"name\": \"Red Shirt - Updated\",\r\n  \"quantity\": 60,\r\n  \"price\": 279.99,\r\n  \"description\": \"Updated description\",\r\n  \"updated_by\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/update-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"update-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 17\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/delete-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"success\",\r\n  \"password\": \"welcome\",\r\n  \"userType\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/add-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user-by-id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NTAwMTAzNDR9.vteg69DszNeKqgECEgMhNeWVB8fJeZCbS8DAcn8qfCjS4ZfqyfRM0yMTb2tm7vPCsiaDhGkqRy5k4CPeo4k1bubOPRHHvEJoFlkEmf5Od10-2UNpUMpoWyLGcs17-1Xe7a6klCpdma6eax6Uwp463Uqw8TPWTg5_VsjUw6b162ufnv2Ow77dCTT6fC1_VXUzLmKfP2ZcWLcjmHqPGDIy8P9J2jUOP_JXQ8r4y9Py1lBFD6BRp82Ae01xNfeX1oundYg8G9QCqmNxijXYUWkGvKeWohRpPaRgKohyqY-c7MqmJQGMAPAhZpZXSpiajMnBZfOPatjz-5bKC4n2QflJ8g",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/get-user-by-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get-user-by-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"s\",\r\n  \"password\": \"12\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/loginUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"loginUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user-role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInVzZXIiOjIsImlhdCI6MTc1MDAxNTUzM30.V83vqV5TzAZnzGxgcue7RT32a7ThDAnFUhdBawIBWLFkVAavbzdYDB1WtBKJrOPJN-pv-1rlEHPv_aXR312_HWppfa7B3ws-1ehUVeWVJFFHhfEEHJPU1y6xuq96Cf-hkjwUdCfWJQmgp_ohh-2L8WOeFEEBK7125Ao45fGNF_VzISMn25-N8piaB7bF0g14vnDdHkrbbjpSOzUWnIR4O-Q0UbgKuL4O6srJuZmMyOe9L8v8nOlSG0q6g59Un32181PrRG7v9ph2cAm_F_Xcu421SqT7USbxsYtTjmoQX-7Uo8e15cqABe-yLTHgnmQTKomB39sfE6auQa_tgixVIw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInVzZXIiOjIsImlhdCI6MTc1MDAxNTUzM30.V83vqV5TzAZnzGxgcue7RT32a7ThDAnFUhdBawIBWLFkVAavbzdYDB1WtBKJrOPJN-pv-1rlEHPv_aXR312_HWppfa7B3ws-1ehUVeWVJFFHhfEEHJPU1y6xuq96Cf-hkjwUdCfWJQmgp_ohh-2L8WOeFEEBK7125Ao45fGNF_VzISMn25-N8piaB7bF0g14vnDdHkrbbjpSOzUWnIR4O-Q0UbgKuL4O6srJuZmMyOe9L8v8nOlSG0q6g59Un32181PrRG7v9ph2cAm_F_Xcu421SqT7USbxsYtTjmoQX-7Uo8e15cqABe-yLTHgnmQTKomB39sfE6auQa_tgixVIw\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/get-user-role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"get-user-role"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
