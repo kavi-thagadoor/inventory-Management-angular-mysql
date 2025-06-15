@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2025 at 10:07 PM
+-- Generation Time: Jun 15, 2025 at 10:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -60,7 +60,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `userType`, `created_at`, `updated_at`) VALUES
-(10, 's', '$2b$04$14wVIDMnfhnX0j9/vbqYHO6KMDZuKglMvh0q.nuMFBaB9I746EE1m', 1, '2025-06-15 19:20:05', '2025-06-15 19:45:17');
+(11, 'success', '$2b$04$b9zteAc9Uh0l1ODLnPelcOOEPXiU1erWBMbpyUHWGEjOwzctYcOJy', 1, '2025-06-15 20:11:17', '2025-06-15 20:11:17');
 
 --
 -- Indexes for dumped tables
@@ -93,7 +93,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
