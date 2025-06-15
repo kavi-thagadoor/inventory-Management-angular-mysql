@@ -1,59 +1,80 @@
-# InventoryCrud
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+# Inventory CRUD - Frontend
 
-## Development server
+This is the frontend of the Inventory CRUD application, built with Angular 19, Bootstrap 5, and JWT for authentication.
 
-To start a local development server, run:
+---
+
+## 🚀 Features
+
+- Angular 19+ Single Page Application
+- Bootstrap 5 UI Components with ng-bootstrap
+- JWT decoding for authentication handling
+- Routing with Angular Router
+- Reactive and Template-driven Forms
+
+---
+
+## 📦 Installation
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Running the Application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open your browser and navigate to:  
+`http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🛠️ Build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+To continuously build on changes:
 
-## Running unit tests
+```bash
+npm run watch
+```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
+
+## ✅ Running Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📚 Dependencies
 
-```bash
-ng e2e
-```
+- **@angular/core**: Angular core framework
+- **@ng-bootstrap/ng-bootstrap**: Bootstrap components for Angular
+- **bootstrap**: CSS framework for styling
+- **jwt-decode**: Decode JWT tokens
+- **rxjs**: Reactive programming library
+- **zone.js**: Required for Angular change detection
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🧪 Dev Dependencies
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular CLI and Devkit
+- Karma & Jasmine for unit testing
+- TypeScript
+
+---
+
+## 🪪 License
+
+**Private Project**
