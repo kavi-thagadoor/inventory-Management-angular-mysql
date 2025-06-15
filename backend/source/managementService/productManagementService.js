@@ -11,6 +11,12 @@ export let getProduct = async (req) => {
     return res;  
 }
 
+
+export let getProductById = async (req) => {
+    let res = await ProductManagement.getProductById(req);
+    return res;  
+}
+
 export let updateProduct = async (req) => {
     let res = await ProductManagement.updateProduct(req);
     return res;  
@@ -20,3 +26,4 @@ export let deleteProduct = async (req) => {
     let res = await ProductManagement.deleteProduct(req);
     return res;  
 }
+

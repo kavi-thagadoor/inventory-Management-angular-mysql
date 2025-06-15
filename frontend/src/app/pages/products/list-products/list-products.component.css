@@ -1,0 +1,6 @@
+.box{
+  padding: 20px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+}

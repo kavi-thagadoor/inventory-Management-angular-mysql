@@ -18,6 +18,15 @@ export let getProduct = async (req,res) =>{
     }
 }
 
+export let getProductById = async (req,res) =>{
+    try {
+        let response = await productManagementService.getProductById(req.body);
+        res.json(response);
+    } catch (error) {
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+}
+
 export let updateProduct = async (req,res) =>{
     try {
         let response = await productManagementService.updateProduct(req.body);
@@ -35,3 +44,5 @@ export let deleteProduct = async (req,res) =>{
         res.status(500).json({ message: "Internal Server Error" });
     }
 }
+
+

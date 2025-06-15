@@ -40,14 +40,14 @@ export let getUserById = (users) => {
                 // No match found
                 resolve({
                     status: typ.status.Failed,
-                    message: 'Invalid username or password',
+                    message: 'User Not Found',
                 });
             }
-
+            users[0].password = undefined; // Remove password from user object
             // Success case
             resolve({
                 status: typ.status.Success,
-                message: 'User logged in successfully',
+                message: 'User Found',
                 data: users
             });
         });
@@ -87,8 +87,8 @@ export const loginUser = async (users) => {
                         message: 'Invalid username or password',
                     });
                 }
-
-                const tokenData = await cons.generateUserToken(user.id);
+                user.password = undefined; // Remove password from user object
+                const tokenData = await cons.generateUserToken(user.id,user.userType);
 
                 resolve({
                     status: typ.status.Success,

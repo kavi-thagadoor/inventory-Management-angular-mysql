@@ -1,5 +1,6 @@
 import * as database from '../database/db.js';  
 import * as typ from '../utils/types.js';
+import * as cons from '../constant.js';
 
 export let addProduct = (product) => {
     return new Promise((resolve) => {
@@ -14,7 +15,6 @@ export let addProduct = (product) => {
             resolve({
                 status: typ.status.Success,
                 message: 'Product added successfully',
-                productId: result.insertId
             });
         });
     });
@@ -35,12 +35,41 @@ export let getProduct = (product) => {
                 // No match found
                 resolve({
                     status: typ.status.NotFound,
-                    message: 'Products not found',
+                    datas: 'Products not found',
                 });
             }
             resolve({
                 status: typ.status.Success,
-                message: result
+                datas: result
+            });
+        });
+    });
+};
+
+export let getProductById = (product) => {
+    return new Promise((resolve,reject) => {
+         const { id } = product; 
+        const sql = 'SELECT * FROM products WHERE id = ?';
+        database.connection.query(sql, [id], (err, result) => {
+            if (err) {
+                reject({
+                     status: typ.status.NotFound,
+                     message: 'Error', error: err.message 
+             });
+            }
+            if (!result || result.length === 0) {
+                // No match found
+                resolve({
+                    status: typ.status.Failed,
+                    message: 'Invalid username or password',
+                });
+            }
+
+            // Success case
+            resolve({
+                status: typ.status.Success,
+                message: 'User logged in successfully',
+                datas: result
             });
         });
     });

@@ -1,0 +1,40 @@
+
+<app-header></app-header>
+
+@if (products.length > 0) {
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col" *ngIf="isAdmin">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.product_code}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td *ngIf="isAdmin">
+          <button class="btn btn-primary m-2" (click)="editProduct(product.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+}@else {
+  <div class="box">
+ <h4>Products Not Found </h4>
+  </div>
+
+}
+
+
+
+

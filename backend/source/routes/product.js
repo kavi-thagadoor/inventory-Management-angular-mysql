@@ -1,11 +1,12 @@
-import express from 'express'
+import express from 'express';
 import * as productController from '../controller/productController.js';
+import { verifyUserToken } from '../constant.js'; // adjust path
 
 const productRouter = express.Router();
 
-productRouter.post('/add-products',productController.addProduct);
-productRouter.post('/get-products',productController.getProduct);
-productRouter.post('/update-product',productController.updateProduct);
-productRouter.post('/delete-product',productController.deleteProduct);
-
+productRouter.post('/product/add-products', verifyUserToken, productController.addProduct);
+productRouter.post('/product/get-products', verifyUserToken, productController.getProduct);
+productRouter.post('/product/get-productById', verifyUserToken, productController.getProductById);
+productRouter.post('/product/update-product', verifyUserToken, productController.updateProduct);
+productRouter.post('/product/delete-product', verifyUserToken, productController.deleteProduct);
 export default productRouter;
